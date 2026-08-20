@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journal | The Method – Wine. Culture. Intentional Living.</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <style>
+        /* ============================================
+                   RESET & BASE – PREMIUM EDITORIAL
+                   ============================================ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #f7f2eb;
+            --mocha: #8b7a6b;
+            --olive: #7a7a66;
+            --stone: #d4cdc4;
+            --charcoal: #1e1c1a;
+            --warm-black: #2a2725;
+            --soft-white: #fcfaf8;
+            --gold: #b89a7a;
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --transition: 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --elegant-shadow: 0 20px 60px rgba(0, 0, 0, 0.04);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--soft-white);
+            color: var(--charcoal);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ============================================
+                   UTILITY – BRAND LANGUAGE
+                   ============================================ */
+        .section-tag {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--mocha);
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+            display: inline-block;
+            border-bottom: 1px solid var(--stone);
+            padding-bottom: 0.3rem;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            color: var(--charcoal);
+        }
+
+        .section-title .gold {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .section-sub {
+            font-size: 1.05rem;
+            color: var(--mocha);
+            max-width: 580px;
+            font-weight: 350;
+            line-height: 1.7;
+        }
+
+        .btn-ghost {
+            display: inline-block;
+            padding: 0.85rem 2.4rem;
+            border: 1px solid var(--charcoal);
+            border-radius: 40px;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: var(--transition);
+            background: transparent;
+            color: var(--charcoal);
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .btn-ghost:hover {
+            background: var(--charcoal);
+            color: var(--soft-white);
+            transform: translateY(-2px);
+        }
+
+        .btn-ghost-light {
+            border-color: var(--soft-white);
+            color: var(--soft-white);
+        }
+
+        .btn-ghost-light:hover {
+            background: var(--soft-white);
+            color: var(--charcoal);
+        }
+
+        .gold-accent {
+            color: var(--gold);
+        }
+
+        /* ============================================
+                   HEADER / NAV – CINEMATIC & REFINED
+                   ============================================ */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: transparent;
+            transition: var(--transition);
+            mix-blend-mode: difference;
+        }
+
+        .site-header.scrolled {
+            background: rgba(252, 250, 248, 0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            mix-blend-mode: normal;
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.03);
+            padding: 0.9rem 2rem;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            color: var(--soft-white);
+            transition: var(--transition);
+        }
+
+        .site-header.scrolled .logo {
+            color: var(--charcoal);
+        }
+
+        .logo span {
+            font-weight: 300;
+            opacity: 0.6;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0.4rem;
+        }
+
+        .nav-toggle span {
+            width: 28px;
+            height: 1.5px;
+            background: var(--soft-white);
+            transition: var(--transition);
+        }
+
+        .site-header.scrolled .nav-toggle span {
+            background: var(--charcoal);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.8rem;
+            list-style: none;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 450;
+            color: var(--soft-white);
+            transition: var(--transition);
+        }
+
+        .site-header.scrolled .nav-links {
+            color: var(--charcoal);
+        }
+
+        .nav-links a {
+            transition: var(--transition);
+            opacity: 0.75;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: currentColor;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* ============================================
+                   HERO – CINEMATIC JOURNAL
+                   ============================================ */
+        .journal-hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 5rem;
+            background: var(--charcoal);
+            color: var(--soft-white);
+            overflow: hidden;
+        }
+
+        .journal-hero .hero-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+            transition: transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .journal-hero:hover .hero-bg {
+            transform: scale(1.03);
+        }
+
+        .journal-hero .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(30, 28, 26, 0.8) 0%, rgba(30, 28, 26, 0.2) 60%);
+            z-index: 1;
+        }
+
+        .journal-hero .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 720px;
+            padding-bottom: 2rem;
+        }
+
+        .journal-hero .hero-eyebrow {
+            font-size: 0.65rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--stone);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .journal-hero .hero-title {
+            font-family: var(--font-serif);
+            font-size: clamp(3.2rem, 8vw, 5.5rem);
+            font-weight: 400;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.8rem;
+        }
+
+        .journal-hero .hero-title em {
+            font-style: italic;
+            font-weight: 300;
+            color: var(--gold);
+        }
+
+        .journal-hero .hero-desc {
+            font-size: 1.1rem;
+            max-width: 540px;
+            opacity: 0.8;
+            font-weight: 300;
+            line-height: 1.8;
+            margin: 0 auto 2.8rem;
+        }
+
+        /* ============================================
+                   CATEGORY FILTER
+                   ============================================ */
+        .category-filter {
+            padding: 2rem 0;
+            background: var(--soft-white);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .category-filter .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+        }
+
+        .category-filter a {
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--mocha);
+            padding-bottom: 0.3rem;
+            border-bottom: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .category-filter a:hover,
+        .category-filter a.active {
+            color: var(--charcoal);
+            border-bottom-color: var(--gold);
+        }
+
+        /* ============================================
+                   JOURNAL GRID – EDITORIAL STORIES
+                   ============================================ */
+        .journal-grid {
+            padding: 4rem 2rem 5rem;
+            background: var(--soft-white);
+        }
+
+        .journal-grid .grid-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .journal-items {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .journal-card {
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            cursor: default;
+            background: #ffffff;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .journal-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--elegant-shadow);
+        }
+
+        .journal-card .card-image {
+            height: 320px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 1s ease;
+        }
+
+        .journal-card:hover .card-image {
+            transform: scale(1.03);
+        }
+
+        .journal-card .card-content {
+            padding: 1.8rem 1.8rem 2.2rem;
+        }
+
+        .journal-card .card-category {
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--mocha);
+            margin-bottom: 0.4rem;
+            display: block;
+        }
+
+        .journal-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.35rem;
+            font-weight: 400;
+            line-height: 1.3;
+            margin-bottom: 0.5rem;
+            color: var(--charcoal);
+        }
+
+        .journal-card p {
+            font-size: 0.92rem;
+            color: var(--mocha);
+            line-height: 1.6;
+            font-weight: 350;
+            margin-bottom: 1.2rem;
+        }
+
+        .journal-card .read-more {
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 0.2rem;
+            display: inline-block;
+        }
+
+        .journal-card .read-more:hover {
+            color: var(--charcoal);
+            border-bottom-color: var(--charcoal);
+        }
+
+        /* ============================================
+                   FEATURED STORY – FULL WIDTH
+                   ============================================ */
+        .featured-story {
+            padding: 5rem 2rem;
+            background: var(--charcoal);
+            color: var(--soft-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-story::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(184, 154, 122, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .featured-story .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .featured-story .fs-image {
+            height: 480px;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .featured-story .fs-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s ease;
+        }
+
+        .featured-story .fs-image:hover img {
+            transform: scale(1.02);
+        }
+
+        .featured-story .fs-text .section-tag {
+            color: var(--stone);
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .featured-story .fs-text h2 {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 1.2rem;
+        }
+
+        .featured-story .fs-text h2 em {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .featured-story .fs-text p {
+            color: var(--stone);
+            font-size: 1.05rem;
+            max-width: 440px;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .fs-cta {
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 0.8rem 2.5rem;
+            border-radius: 40px;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .fs-cta:hover {
+            background: var(--gold);
+            color: var(--charcoal);
+            transform: translateY(-2px);
+        }
+
+        /* ============================================
+                   SECONDARY GRID – MORE STORIES
+                   ============================================ */
+        .secondary-grid {
+            padding: 5rem 2rem;
+            background: var(--cream);
+        }
+
+        .secondary-grid .grid-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .secondary-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .secondary-card {
+            background: var(--soft-white);
+            padding: 2rem;
+            border-radius: 4px;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.02);
+        }
+
+        .secondary-card:hover {
+            box-shadow: var(--elegant-shadow);
+            transform: translateY(-4px);
+        }
+
+        .secondary-card .card-category {
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--mocha);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .secondary-card h4 {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .secondary-card p {
+            font-size: 0.85rem;
+            color: var(--mocha);
+            font-weight: 350;
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+        }
+
+        .secondary-card .read-more {
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 0.2rem;
+            display: inline-block;
+        }
+
+        .secondary-card .read-more:hover {
+            color: var(--charcoal);
+            border-bottom-color: var(--charcoal);
+        }
+
+        /* ============================================
+                   FOOTER / CONTACT – CREATE. CURATE. EXPERIENCE.
+                   ============================================ */
+        .site-footer {
+            padding: 4rem 2rem 2.5rem;
+            background: var(--charcoal);
+            color: var(--stone);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 3rem 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h5 {
+            font-family: var(--font-serif);
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--soft-white);
+            margin-bottom: 1rem;
+            letter-spacing: 0.02em;
+        }
+
+        .footer-col p,
+        .footer-col a {
+            font-size: 0.85rem;
+            font-weight: 350;
+            line-height: 1.9;
+            opacity: 0.7;
+            transition: var(--transition);
+            display: block;
+        }
+
+        .footer-col a:hover {
+            opacity: 1;
+            color: var(--soft-white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.7rem;
+            letter-spacing: 0.05em;
+            opacity: 0.5;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 1.8rem;
+        }
+
+        .footer-socials a {
+            opacity: 0.5;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .footer-socials a:hover {
+            opacity: 1;
+        }
+
+        /* ============================================
+                   RESPONSIVE
+                   ============================================ */
+        @media (max-width: 900px) {
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                max-width: 360px;
+                height: 100vh;
+                background: var(--soft-white);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2.2rem;
+                color: var(--charcoal);
+                padding: 2rem;
+                transition: var(--transition);
+                box-shadow: -10px 0 60px rgba(0, 0, 0, 0.05);
+            }
+
+            .nav-links.open {
+                right: 0;
+            }
+
+            .site-header.scrolled .nav-links {
+                color: var(--charcoal);
+            }
+
+            .site-header .nav-links a {
+                color: var(--charcoal);
+                font-size: 0.9rem;
+            }
+
+            .journal-hero .hero-title {
+                font-size: clamp(2.6rem, 8vw, 4.8rem);
+            }
+
+            .journal-items {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-story .container {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-story .fs-image {
+                height: 350px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .container {
+                padding: 0 1.2rem;
+            }
+
+            .site-header {
+                padding: 1rem 1.2rem;
+            }
+
+            .journal-hero {
+                padding: 6rem 1.2rem 3rem;
+            }
+
+            .category-filter .container {
+                gap: 1.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .featured-story .fs-text h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* ============================================
+                   ANIMATIONS – FADE IN WITH INTENTION
+                   ============================================ */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header" id="siteHeader">
+        <a href="Home.html" class="logo">The Method <span>—</span></a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+                <ul class="nav-links" id="navLinks">
+            <!-- Back Button -->
+            <li><a href="Home.html"><i class="fas fa-arrow-left"></i> Back</a></li>
+
+            <!-- Existing Navigation Links -->
+            <li><a href="About.html#about">About</a></li>
+            <li><a href="Episodes.html#episodes">Episodes</a></li>
+            <li><a href="Journal.html" style="opacity:1; border-bottom: 2px solid var(--gold);">Journal</a></li>
+            <li><a href="Wine-Dining.html#wine">Wine &amp; Dining</a></li>
+            <li><a href="Upcoming.html">Upcoming</a></li>
+            <li><a href="Partners.html#partners">Partners</a></li>
+            <li><a href="Contact.html#contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="journal-hero">
+        <img class="hero-bg" src="assets/images/journal-hero.jpg" alt="Journal hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <p class="hero-eyebrow">The Method – Journal</p>
+            <h1 class="hero-title">Stories that <em>linger</em>.</h1>
+            <p class="hero-desc">
+                Essays, conversations, and visual narratives on intentional living, wine culture, and modern African creativity.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== CATEGORY FILTER ===== -->
+    <section class="category-filter">
+        <div class="container">
+            <a href="#" class="active">All</a>
+            <a href="#">Wine</a>
+            <a href="#">Culture</a>
+            <a href="#">Design</a>
+            <a href="#">Wellness</a>
+        </div>
+    </section>
+
+    <!-- ===== JOURNAL GRID ===== -->
+    <section class="journal-grid">
+        <div class="container">
+            <div class="grid-header">
+                <div>
+                    <p class="section-tag">Editorial</p>
+                    <h2 class="section-title">From the <span class="gold">table</span></h2>
+                </div>
+            </div>
+
+            <div class="journal-items">
+                <!-- Featured Story 1 -->
+                <article class="journal-card fade-in">
+                    <div class="card-image" style="background-image: url('assets/images/breakfast-in-cape-town-14.jpg');"></div>
+                    <div class="card-content">
+                        <span class="card-category">Wine &amp; Culture</span>
+                        <h3>The forgotten vineyards of the Cape</h3>
+                        <p>An intimate journey through the heritage vines that shaped a continent's taste and identity. Tracing the stories of the land, the people, and the bottles that carry their legacy.</p>
+                        <a href="#" class="read-more">Read story →</a>
+                    </div>
+                </article>
+
+                <!-- Featured Story 2 -->
+                <article class="journal-card fade-in">
+                    <div class="card-image" style="background-image: url('assets/images/tables-that-tell-stories.jpg');"></div>
+                    <div class="card-content">
+                        <span class="card-category">Design &amp; Living</span>
+                        <h3>Tables that tell stories</h3>
+                        <p>How contemporary African ceramicists are redefining the dining ritual. Exploring the intersection of craft, culture, and the art of gathering.</p>
+                        <a href="#" class="read-more">Read story →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURED STORY ===== -->
+    <section class="featured-story">
+        <div class="container">
+            <div class="fs-image">
+                <img src="assets/images/Lindelwe_Mthembu_Xolelwa_Mthembu_1.jpg" alt="Featured story">
+            </div>
+            <div class="fs-text">
+                <p class="section-tag">Featured Story</p>
+                <h2>Chef Lindiwe on <em>terroir</em> and memory</h2>
+                <p>An extended conversation about flavour, place, and the future of African cuisine. How one chef is using food to reconnect with heritage and redefine modern dining.</p>
+                <a href="#" class="fs-cta">Read the full story</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECONDARY GRID ===== -->
+    <section class="secondary-grid">
+        <div class="container">
+            <div class="grid-header">
+                <div>
+                    <p class="section-tag">More Stories</p>
+                    <h2 class="section-title">Further <span class="gold">reading</span></h2>
+                </div>
+            </div>
+
+            <div class="secondary-items">
+                <div class="secondary-card fade-in">
+                    <span class="card-category">Intentional Living</span>
+                    <h4>Rituals of the modern table</h4>
+                    <p>How we gather shapes the way we experience each other and the world around us.</p>
+                    <a href="#" class="read-more">Read story →</a>
+                </div>
+                <div class="secondary-card fade-in">
+                    <span class="card-category">Design &amp; Spaces</span>
+                    <h4>Beautiful living in quiet moments</h4>
+                    <p>Soft luxury, natural textures, and the spaces that invite presence and reflection.</p>
+                    <a href="#" class="read-more">Read story →</a>
+                </div>
+                <div class="secondary-card fade-in">
+                    <span class="card-category">Wine &amp; Culture</span>
+                    <h4>The art of the slow pour</h4>
+                    <p>Wine has never only been about wine. It's about conversation, culture, and connection.</p>
+                    <a href="#" class="read-more">Read story →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER / CONTACT ===== -->
+    <footer class="site-footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h5>The Method</h5>
+                    <p>Wine. Culture. Intentional Living.</p>
+                    <p style="margin-top:0.5rem;opacity:0.5;font-size:0.75rem;">
+                        &copy; 2026 The Method
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h5>Connect</h5>
+                    <a href="mailto:theluyandamethod@gmail.com">theluyandamethod@gmail.com</a>
+                    <a href="tel:+27713087089">+27 71 308 7089</a>
+                    <p style="margin-top:0.3rem;font-size:0.8rem;opacity:0.5;">
+                        21 Keyes Avenue, Mesh Club, Rosebank
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h5>Explore</h5>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#episodes">Episodes</a>
+                    <a href="journal.html">Journal</a>
+                    <a href="upcoming.html">Upcoming</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Follow</h5>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/the_luyanda_method/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+                        <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>Create. Curate. Experience.</span>
+                <span>Built with intention</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        // -------- HEADER SCROLL EFFECT --------
+        const header = document.getElementById('siteHeader');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const y = window.scrollY;
+            if (y > 60) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            lastScroll = y;
+        });
+
+        // -------- MOBILE NAV TOGGLE --------
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+
+        // Close nav on link click (mobile)
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+            });
+        });
+
+        // -------- CATEGORY FILTER (Visual only) --------
+        document.querySelectorAll('.category-filter a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector('.category-filter a.active').classList.remove('active');
+                this.classList.add('active');
+            });
+        });
+
+        // -------- FADE-IN ON SCROLL (Intersection Observer) --------
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        fadeElements.forEach(el => observer.observe(el));
+
+        // -------- SMOOTH SCROLL FOR ANCHOR LINKS --------
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    const offset = 80;
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // -------- LOGO CLICK RESETS TO TOP --------
+        document.querySelector('.logo').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            navLinks.classList.remove('open');
+        });
+
+        console.log('The Method — Wine. Culture. Intentional Living.');
+    </script>
+
+</body>
+</html>
